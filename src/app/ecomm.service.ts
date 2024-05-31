@@ -26,5 +26,10 @@ export class EcommService {
   Addtocart(id:any,cart:any){
     return this.client.put(this.url1+id,JSON.stringify(cart),this.httpOptions);
   }
+
+  GetCartforUser(id:any):Observable<any>
+  {
+    return this.client.get(this.url1+id);
+  }
  
 }
