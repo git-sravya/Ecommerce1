@@ -1,0 +1,17 @@
+
+
+<div class="container" >
+    <!--Your content goes here-->
+    <div class="container">
+      <div class="row">
+          <div class="col-md-3" *ngFor="let p of Products">              
+                  <div class="product-container col" >
+                    <div class="prod-Box"><img [src]=p.image height="50">
+                    <p><span class="product-name">{{p.title}}</span>  | 
+                       <span class="product-price">${{p.price}}</span></p>
+                       <button class="btn btn-primary" id="118" (click)="Addtocart(p.id)">Add To Cart</button></div>
+                  </div>              
+          </div>
+      </div>
+  </div>
+  </div>
