@@ -8,7 +8,7 @@ import { EcommService } from '../ecomm.service';
 })
 export class ProductComponent {
   Products:any[]=[];
-  cart:any={};
+  cart:any;
   product:any={};
   constructor(private service:EcommService){
     service.getAllProducts().subscribe((data)=>{
@@ -18,29 +18,34 @@ export class ProductComponent {
   }
 
   Addtocart(id:any){
-
-    this.product.id=id;
-
-    this.cart.id=1;
-    this.cart.userId=1;
-    this.cart.date=new Date();
-    var p=this.Products.find(p=>{return p.id===id});
-    if(p!=null)
-      {
-        p.quantity=p.quantity+1;
-        this.cart.products.push(p);
+    var result= this.service.GetCartforUser(1).subscribe({
+      next:(data)=>{
+        this.cart=data;
+        
+        var index=this.cart.products.findIndex((x:any)=>{
+             return x.productId==id;              
+           })
+           if(index>=0)
+            {
+              this.cart.products[index].quantity=this.cart.products[index].quantity+1;
+              
+            
+            }
+            else
+            {
+              this.product.productId=id;
+              this.product.quantity=1;
+              this.cart.products.push(this.product);
+              
+              
+            }
+            this.service.Addtocart(1,this.cart).subscribe(x=>{
+              //console.log(x);
+            });
+          
       }
-      else
-      {
-        p.productId=id;
-        p.quantity=1;
-        this.cart.products.push(p);
-      }
-
-    
-
-
-    
+    })
+      
 
   }
 }
