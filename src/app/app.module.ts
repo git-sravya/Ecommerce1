@@ -4,11 +4,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
+import { HeaderComponent } from './header/header.component';
+import { SubHeaderComponent } from './sub-header/sub-header.component';
+import { CarouselComponent } from './sub-header/carousel/carousel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent
+    ProductComponent,
+    HeaderComponent,
+    SubHeaderComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
