@@ -44,8 +44,9 @@ export class ProductComponent {
             });
           
       }
-    })
-      
+    })  
 
   }
+
+  
 }
