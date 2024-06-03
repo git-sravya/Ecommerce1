@@ -9,9 +9,12 @@
                     <div class="prod-Box"><img [src]=p.image height="50">
                     <p><span class="product-name">{{p.title}}</span>  | 
                        <span class="product-price">${{p.price}}</span></p>
-                       <button class="btn btn-primary" id="118" (click)="Addtocart(p.id)">Add To Cart</button></div>
-                    </div>              
+                       <button class="btn btn-primary" id="118" (click)="Addtocart(p.id)">+</button>
+                  |
+                   <button class="btn btn-primary" id="119" (click)="Removefromcart(p.id)">-</button>
+                      </div>              
           </div>
       </div>
   </div>
-  </div>
+    </div>
+    </div>
