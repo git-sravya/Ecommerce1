@@ -1,0 +1,15 @@
+.footer-bg{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+
+h5{
+  color: white !important;
+    
+} 
+
+li a:hover {
+  color: white !important;
+  font-weight: bold;
+}

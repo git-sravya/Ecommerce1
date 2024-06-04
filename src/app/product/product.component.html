@@ -1,8 +1,8 @@
 
 
- <div class="container" >
+ <!-- <div class="container" > -->
     <!--Your content goes here-->
-     <div class="container">
+    <!--  <div class="container">
       <div class="row">
           <div class="col-md-3" *ngFor="let p of Products">              
                   <div class="product-container col" >
@@ -17,8 +17,23 @@
       </div>
   </div>
     </div>
-    </div>
+    </div> -->
 
+    <div class="container">
+      <div class="row">
+          <ng-container *ngFor="let item of Products">
+              <div class="card col-md-3">
+                  <img src="{{item.image}}" alt="">
+                  <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+                  <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                  <p><strong>Price:</strong> ${{item.price}}</p>
+                  <button class="btn btn-primary">+</button>
+                  <button class="btn btn-primary btn-remove-cart" id="119" (click)="Removefromcart(item.id)">-</button>
+              </div>
+          </ng-container>
+  
+      </div>
+  </div>
 
   
 
