@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { SubHeaderComponent } from './sub-header/sub-header.component';
 import { CarouselComponent } from './sub-header/carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
+import { ViewProductComponent } from './view-product/view-product.component';
+import { ViewCartComponent } from './view-cart/view-cart.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     SubHeaderComponent,
     CarouselComponent,
-    FooterComponent
+    FooterComponent,
+    ViewProductComponent,
+    ViewCartComponent
   ],
   imports: [
     BrowserModule,

@@ -19,16 +19,18 @@
     </div>
     </div> -->
 
+    <!-- <button [routerLink]="['/details/', product.id]">View</button> -->
+
     <div class="container">
       <div class="row">
           <ng-container *ngFor="let item of Products">
               <div class="card col-md-3">
-                  <img src="{{item.image}}" alt="">
+              <a [routerLink]="['/details/', item.id]">   <img src="{{item.image}}" alt=""></a>
                   <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
                   <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
                   <p><strong>Price:</strong> ${{item.price}}</p>
-                  <button class="btn btn-primary">+</button>
-                  <button class="btn btn-primary btn-remove-cart" id="119" (click)="Removefromcart(item.id)">-</button>
+                  <button class="btn btn-primary"  (click)="Addtocart(item.id)">Add to cart</button>
+                  <!-- <button class="btn btn-primary btn-remove-cart" id="119" (click)="Removefromcart(item.id)">-</button> -->
               </div>
           </ng-container>
   
