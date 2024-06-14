@@ -1,4 +1,4 @@
-<div class="container mt-5 mb-5">
+<div *ngIf="cart.length!==0"  class="container mt-5 mb-5">
     <div class="d-flex justify-content-center row">
         <div class="col-md-10">
             <div class="row p-2 bg-white border rounded" *ngFor="let c of cart">
@@ -21,4 +21,11 @@
             
         </div>
     </div>
+</div>
+
+<div *ngIf="cart.length == 0" class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+            <img src="../../assets/img/no-products.png" />
+   </div>
 </div>
