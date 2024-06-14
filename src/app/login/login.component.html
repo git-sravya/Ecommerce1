@@ -1,0 +1,44 @@
+<section class="h-100">
+    <div class="container h-100">
+        <div class="row justify-content-sm-center h-100">
+            <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+               <!--  <div class="text-center my-5">
+                    <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="logo" width="100">
+                </div> -->
+                <div class="card shadow-lg">
+                    <div class="card-body p-5 " style="border-radius: 5px; box-shadow: 10px; background-color: black;">
+                        <h1 class="fs-4 card-title fw-bold mb-4" style="color: white;">Please Login</h1>
+                        <form #form1="ngForm"  class="needs-validation" novalidate="" autocomplete="off" (ngSubmit)="onSubmitHandler(form1)">
+
+                            <div class="mb-3">
+                                <label class="mb-2 text-bold" for="email">E-Mail Address</label>
+                                <input id="email" type="email" class="form-control" name="email" ngModel #email="ngModel" value="" required>
+                                <div class="invalid-feedback">
+                                    Email is invalid
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="mb-2 text-bold" for="password">Password</label>
+                                <input id="password" type="password" class="form-control" name="password" ngModel #password="ngModel" required>
+                                <div class="invalid-feedback">
+                                    Password is required
+                                </div>
+                            </div>
+
+
+                            <div class="align-items-center d-flex">
+                                <button [disabled]="form1.invalid" type="submit" class="btn btn-primary ms-auto">
+                                    Login
+                                </button>
+                                <p style="color: white;">{{error}}</p>
+                            </div>
+                        </form>
+                    </div>
+                  
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</section>

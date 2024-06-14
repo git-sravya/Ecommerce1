@@ -4,6 +4,7 @@ import { SubHeaderComponent } from './sub-header/sub-header.component';
 import { ProductComponent } from './product/product.component';
 import { ViewProductComponent } from './view-product/view-product.component';
 import { ViewCartComponent } from './view-cart/view-cart.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'product',component:ProductComponent},
   { path: 'details/:productid', component: ViewProductComponent },
   { path: 'viewcart', component: ViewCartComponent },
+  {path:'login',component:LoginComponent}
   // {path:'**',component:ErrorComponent}
 
 ];

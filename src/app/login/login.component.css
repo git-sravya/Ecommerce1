@@ -1,0 +1,11 @@
+button{
+    margin: 0 !important;
+}
+
+.btn-primary{
+    background: wheat;
+}
+
+input.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
