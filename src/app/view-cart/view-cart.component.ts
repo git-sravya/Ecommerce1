@@ -22,16 +22,24 @@ export class ViewCartComponent implements OnInit {
 
   ngOnInit(): void {
      console.log(localStorage.getItem('userId'));
-     this.loginLogOut.notifyOthers({refresh:true});
-    this.loginLogOut.notifyObservable$.subscribe((res) => {
-      if(res.refresh) {
-       this.flag = true;
-      }
-      else {
-       this.flag = false;
-      }
-   })
+      //added for header logo login status when visiting the viewcart page.
+       this.checkLoginStatus();
+   
     
+  }
+
+  private checkLoginStatus(){
+    if(localStorage.getItem('userId')!==null){
+      this.loginLogOut.notifyOthers({refresh:true});
+      this.loginLogOut.notifyObservable$.subscribe((res) => {
+        if(res.refresh) {
+         this.flag = true;
+        }
+        else {
+         this.flag = false;
+        }
+     })
+     }
   }
 
 
