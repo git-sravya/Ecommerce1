@@ -28,6 +28,7 @@ export class LoginComponent {
         (user:any) => {
           //console.log(form.value.email);
           if((form.value.email == user.email) && (form.value.password == user.password)){
+            alert('Hii');
             this.flag = true;
             localStorage.setItem('userId',user.id);
             this.router.navigate(['product']);
